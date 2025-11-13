@@ -1,0 +1,38 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "flarelinker",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-09-06",
+	"observability": {
+		"enabled": true
+	},
+	"kv_namespaces": [
+		{
+			"binding": "LINKS_KV",
+			"id": "YOUR_PRODUCTION_KV_NAMESPACE_ID"
+		},
+		{
+			"binding": "LINKS_KV_preview",
+			"preview_id": "YOUR_PREVIEW_KV_NAMESPACE_ID",
+			"id": "YOUR_PRODUCTION_KV_NAMESPACE_ID"
+		}
+	],
+	"vars": {
+		"HOMEPAGE": "https://example.com",
+		"NOT_FOUND": "https://example.com/404",
+		"ACCESS_TEAM_DOMAIN": "your-team.cloudflareaccess.com",
+		"ACCESS_AUD": "YOUR_CLOUDFLARE_ACCESS_AUDIENCE_ID"
+	},
+	"routes": [
+		{
+			"pattern": "go.yourdomain.com/*",
+			"zone_name": "yourdomain.com"
+		}
+	],
+	"analytics_engine_datasets": [
+		{
+			"binding": "ANALYTICS",
+			"dataset": "go_links"
+		}
+	]
+}
