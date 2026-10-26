@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/0a911f7f-bc5e-49d6-bc8d-0de9e6675de5)
-
 A minimal, production-ready URL shortener built as a Cloudflare Worker. Provides authenticated CRUD APIs, edge-cached redirects, hit tracking, and Cloudflare Access integration.
 
 ## Features
